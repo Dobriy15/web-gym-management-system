@@ -8,7 +8,7 @@ import Profile from './components/Profile';
 import Auth from './components/Auth';
 import AdminPanel from './components/AdminPanel';
 import './App.css';
-import './i18n'; // Import i18n configuration
+import './i18n';
 
 function App() {
     const { t, i18n } = useTranslation();
