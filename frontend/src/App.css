@@ -86,7 +86,7 @@ body {
 
 /* --- Buttons --- */
 button, .btn-primary {
-    border-radius: 25px; /* Beautiful Rounded Corners */
+    border-radius: 25px; /* Rounded Corners */
     border: none;
     padding: 12px 28px;
     cursor: pointer;

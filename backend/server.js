@@ -1,4 +1,3 @@
-/* Next Morning Gym - Final Backend (Level 1-3 Compliant) */
 const express = require('express');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
@@ -11,7 +10,7 @@ const JWT_SECRET = 'gym_secret_2026';
 app.use(cors());
 app.use(express.json({ limit: '10mb' }));
 
-// --- DATABASE INITIALIZATION ---
+// db
 db.serialize(() => {
     // 1. Fitness Classes Table
     db.run(`CREATE TABLE IF NOT EXISTS FitnessClasses (
@@ -47,7 +46,7 @@ db.serialize(() => {
         FOREIGN KEY(class_id) REFERENCES FitnessClasses(id)
     )`);
 
-    // --- SEED DATA (Заполнение, если пусто) ---
+    //  SEED DATA
     db.get("SELECT COUNT(*) AS count FROM FitnessClasses", (err, row) => {
         if (row && row.count === 0) {
             console.log("Seeding Classes...");

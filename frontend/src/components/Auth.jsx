@@ -20,7 +20,6 @@ const Auth = () => {
         const vError = validate();
         if (vError) return setError(vError);
 
-        // ВАЖНО: Проверь, что порт бэкенда совпадает (3000 или 5000)
         const url = `http://localhost:3000/api/auth/${isLogin ? 'login' : 'register'}`;
 
         try {
@@ -31,7 +30,7 @@ const Auth = () => {
                     username: res.data.username,
                     role: res.data.role
                 }));
-                window.location.href = '/'; // Перенаправление на главную
+                window.location.href = '/';
             } else {
                 alert("Success! Now please login.");
                 setIsLogin(true);
